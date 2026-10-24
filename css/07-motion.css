@@ -1,0 +1,18 @@
+/* KOOM · Prism — motion */
+@keyframes rise{from{opacity:0;transform:translateY(12px)}}
+#view.g-enter>*{animation:rise .42s var(--ease) both}
+#view.g-enter>:nth-child(2){animation-delay:.04s}#view.g-enter>:nth-child(3){animation-delay:.08s}#view.g-enter>:nth-child(4){animation-delay:.12s}#view.g-enter>:nth-child(n+5){animation-delay:.16s}
+#view.g-enter .hr>.card,#view.g-enter .grid>.card,#view.g-enter .tr{animation:rise .5s var(--ease) both}
+#view.g-enter .hr>.card:nth-child(2),#view.g-enter .tr:nth-child(2){animation-delay:.05s}
+#view.g-enter .hr>.card:nth-child(3),#view.g-enter .tr:nth-child(3){animation-delay:.09s}
+#view.g-enter .hr>.card:nth-child(4),#view.g-enter .tr:nth-child(4){animation-delay:.13s}
+#view.g-enter .hr>.card:nth-child(5),#view.g-enter .tr:nth-child(5){animation-delay:.17s}
+#view.g-enter .hr>.card:nth-child(n+6),#view.g-enter .tr:nth-child(n+6){animation-delay:.21s}
+.swl{animation:swl .38s var(--ease)}.swr{animation:swr .38s var(--ease)}
+@keyframes swl{0%{transform:none;opacity:1}40%{transform:translateX(-22px);opacity:.2}60%{transform:translateX(22px);opacity:.2}100%{transform:none;opacity:1}}
+@keyframes swr{0%{transform:none;opacity:1}40%{transform:translateX(22px);opacity:.2}60%{transform:translateX(-22px);opacity:.2}100%{transform:none;opacity:1}}
+#nc,#bar{touch-action:pan-y}#bar{touch-action:none}
+#splash{background:#08080d}
+.pill,.btn2,.ib,.chip,.card,.tr,.qk,.stabs button,.mood{touch-action:manipulation}
+#view,#ly,#qq{overscroll-behavior:contain}
+.rm *,.rm *::before,.rm *::after{animation:none!important;transition:none!important}

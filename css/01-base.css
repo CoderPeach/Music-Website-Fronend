@@ -1,0 +1,47 @@
+/* KOOM · Prism — reset, canvas, typography, shared surfaces */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scrollbar-color:var(--fill2) transparent;scrollbar-width:thin;scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.45;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-feature-settings:"cv11","ss01";overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+input,select{font:inherit;color:inherit}
+img{max-width:100%}
+h1,h2,h3{margin:0}
+::selection{background:color-mix(in srgb,var(--acc) 45%,transparent)}
+.dm{}
+
+/* aurora canvas behind everything */
+body::before{content:"";position:fixed;inset:-14%;z-index:-1;pointer-events:none;will-change:transform;
+  background:
+   radial-gradient(44% 38% at 88% 0%,color-mix(in srgb,var(--acc) calc(42%*var(--amb)),transparent),transparent 70%),
+   radial-gradient(40% 36% at 2% 24%,color-mix(in srgb,var(--acc2) calc(36%*var(--amb)),transparent),transparent 70%),
+   radial-gradient(38% 34% at 50% 108%,color-mix(in srgb,var(--acc3) calc(26%*var(--amb)),transparent),transparent 70%);
+  animation:aurora 40s ease-in-out infinite alternate}
+@keyframes aurora{from{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-2.5%,2%,0) scale(1.07)}to{transform:translate3d(2%,-2.5%,0) scale(1.03)}}
+
+/* frosted surfaces share one recipe: blur + tint + luminous 1px edge */
+.side,.bar,.tabs,.mtop,.cm,.sug,.toast,.kinst,.kbox,dialog,.menu,#koff,.sjump,.sc,.fc,.cc,.stc,.scard,.ccard,.kfoot,.topres,.msg.err,.npr,.pill2,.seg,.chero{
+  -webkit-backdrop-filter:var(--bf1);backdrop-filter:var(--bf1)}
+.side,.bar,.tabs,.cm,.sug,.toast,.kinst,.kbox,dialog,.menu{-webkit-backdrop-filter:var(--bf3);backdrop-filter:var(--bf3)}
+.edge{position:relative}
+.side::before,.bar::before,.tabs::before,.cm::before,.kbox::before,dialog::before,.toast::before,.kinst::before,.sug::before,.sc::before,.fc::before,.cc::before,.stc::before,.scard::before,.ccard::before,.kfoot::before,.topres::before,.msg.err::before,.npr::before,.pill2::before,.chero::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:var(--edge);pointer-events:none;z-index:3;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.sc,.fc,.cc,.stc,.scard,.ccard,.kfoot,.topres,.msg.err,.npr,.pill2,.chero,.kbox{position:relative}
+
+/* type */
+.lt{font-size:clamp(2rem,3.4vw,3rem);font-weight:800;letter-spacing:-.04em;line-height:1.06;text-wrap:balance;
+  background:linear-gradient(180deg,var(--ink) 35%,color-mix(in srgb,var(--ink) 55%,transparent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mute);margin:8px 0 0;line-height:1.55}
+.meta{color:var(--mute);font-size:.86rem;margin:8px 0 0}
+.kick{font-size:.7rem;font-weight:800;letter-spacing:.14em;color:var(--acc)}
+.sec{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding:20px 14px 6px}
+.msg{padding:34px;text-align:center;color:var(--mute);line-height:1.6;word-break:break-word}
+.msg.err{border-radius:var(--r-lg);background:var(--g1);margin:24px 0}
+.muted{color:var(--mute);font-size:.9rem;margin-top:22px}
+.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:660px}
+.alink{cursor:pointer;color:inherit}.alink:hover{text-decoration:underline}
+.sp{flex:1}
+.shim{background:linear-gradient(90deg,var(--fill) 25%,var(--fill2) 50%,var(--fill) 75%);background-size:200% 100%;animation:shim 1.3s infinite;border-radius:var(--r-sm)}
+.ln{height:14px}.art.shim{border-radius:var(--r-md)}.phead .pa.shim{display:block}
+@keyframes shim{to{background-position:-200% 0}}

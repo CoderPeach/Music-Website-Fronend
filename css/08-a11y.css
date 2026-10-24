@@ -1,0 +1,15 @@
+/* KOOM · Prism — accessibility + graceful fallbacks (load last) */
+:where(button,input,select,a,[tabindex]):focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.qk:focus-visible,.nav a:focus-visible,.cm button:focus-visible,.tr:focus-visible,.qr:focus-visible{outline-offset:-2px}
+.sbox:focus-visible{outline:none}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  :root{--g1:rgba(44,44,58,.9);--g2:rgba(26,26,38,.96);--g3:rgba(30,30,44,.98)}
+  [data-theme=light]{--g1:rgba(255,255,255,.92);--g2:rgba(250,250,254,.97);--g3:rgba(255,255,255,.99)}
+}
+@media(prefers-reduced-transparency:reduce){
+  :root{--g1:rgba(44,44,58,.92);--g2:rgba(26,26,38,.97);--g3:rgba(30,30,44,.99)}
+  [data-theme=light]{--g1:rgba(255,255,255,.94);--g2:rgba(250,250,254,.98);--g3:rgba(255,255,255,.99)}
+  *{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+}
+@media(prefers-contrast:more){:root{--line:rgba(255,255,255,.4)}[data-theme=light]{--line:rgba(0,0,0,.4)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

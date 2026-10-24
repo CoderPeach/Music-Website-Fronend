@@ -1,0 +1,36 @@
+/* KOOM · Prism — design tokens
+   One system: ink-dark canvas + frosted glass in three levels + a live aurora.
+   g1 = chip / card   g2 = rail / panels   g3 = floating (player, menus, dialogs) */
+:root,[data-theme=dark]{
+  color-scheme:dark;
+  --bg:#08080d;--ink:#f4f4f8;--mute:rgba(244,244,248,.58);
+  --fill:rgba(255,255,255,.06);--fill2:rgba(255,255,255,.115);--line:rgba(255,255,255,.1);
+  --acc:#ff3358;--acc2:#7a5cff;--acc3:#12c6ff;--on:#fff;--glow:rgba(255,51,88,.24);
+  --g1:rgba(255,255,255,.065);--g2:rgba(22,22,34,.52);--g3:rgba(26,26,40,.78);
+  --edge:linear-gradient(145deg,rgba(255,255,255,.5),rgba(255,255,255,.07) 34%,rgba(255,255,255,.02) 66%,rgba(255,255,255,.26));
+  --hi:inset 0 1px 0 rgba(255,255,255,.16);
+  --panel:var(--g3);--side:var(--g2);--bgf:blur(70px) saturate(1.6) brightness(.55);--amb:1;
+  --sh1:0 8px 24px rgba(0,0,0,.32);--sh2:0 20px 54px rgba(0,0,0,.4);--sh3:0 34px 90px rgba(0,0,0,.55)
+}
+[data-theme=ocean]{--bg:#06090f;--acc:#2f9bff;--acc2:#6a5cff;--acc3:#19e0d0;--glow:rgba(47,155,255,.24)}
+[data-theme=violet]{--bg:#0b0711;--acc:#c264ff;--acc2:#ff4f9a;--acc3:#6e7bff;--glow:rgba(194,100,255,.24)}
+[data-theme=forest]{--bg:#060d09;--acc:#2fe07a;--acc2:#16b8a6;--acc3:#b6f04a;--on:#04200f;--glow:rgba(47,224,122,.2)}
+[data-theme=light]{
+  color-scheme:light;--bg:#eef0f7;--ink:#14141c;--mute:rgba(20,20,28,.58);
+  --fill:rgba(20,20,60,.05);--fill2:rgba(20,20,60,.09);--line:rgba(20,20,60,.1);
+  --acc:#f0264c;--acc2:#6c4cff;--acc3:#00a8ff;--on:#fff;--glow:rgba(240,38,76,.14);
+  --g1:rgba(255,255,255,.6);--g2:rgba(255,255,255,.62);--g3:rgba(255,255,255,.86);
+  --edge:linear-gradient(145deg,#fff,rgba(255,255,255,.4) 40%,rgba(110,110,170,.14) 70%,rgba(255,255,255,.85));
+  --hi:inset 0 1px 0 rgba(255,255,255,.95);--amb:.5;--bgf:blur(70px) saturate(1.4) brightness(1.1);
+  --sh1:0 8px 24px rgba(40,40,90,.1);--sh2:0 20px 54px rgba(40,40,90,.15);--sh3:0 34px 90px rgba(40,40,90,.22)
+}
+:root{
+  --r-xs:8px;--r-sm:12px;--r-md:18px;--r-lg:26px;--r-xl:34px;--r-pill:999px;
+  --bf1:blur(20px) saturate(170%);--bf3:blur(46px) saturate(200%);
+  --ease:cubic-bezier(.2,.7,.2,1);--spring:cubic-bezier(.34,1.45,.5,1);
+  --font:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;
+  --ctl:44px;--field:54px;--rail:244px;--gap:16px;
+  --lyfs:clamp(1.6rem,3vw,2.5rem)
+}
+body[data-lys=s]{--lyfs:clamp(1.2rem,2.4vw,1.85rem)}
+body[data-lys=l]{--lyfs:clamp(2rem,4vw,3.1rem)}
