@@ -1,5 +1,5 @@
 /* KOOM service worker: instant loads + offline app shell. Music/API traffic is never cached here. */
-const V = 'koom-shell-v26', IMG = 'koom-img-v1';
+const V = 'koom-shell-v27', IMG = 'koom-img-v2';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest',
   'js/config.js', 'js/lib/i18n.js?v=5', 'js/lib/app.js?v=5', 'js/core/main.js?v=1', 'js/views/koom.js?v=18',
   'js/features/lyrics.js?v=3', 'js/features/offline.js?v=6', 'js/features/track-info.js?v=1', 'js/features/audio-fx.js?v=1', 'js/features/motion.js?v=3', 'js/ui/transitions.js?v=3',
